@@ -1,0 +1,25 @@
+# Javascript Node CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-javascript/ for more details
+#
+version: 2
+
+jobs:
+  build:
+    docker:
+      - image: circleci/node:9.6.1
+
+    steps:
+      - checkout
+      - run:
+          name: Install global packages
+          command: yarn
+      - run:
+          name: Install dependencies
+          command: yarn install
+      - run:
+          name: Solidity Linter
+          command: yarn lint:sol
+      - run:
+          name: Unit tests with coverage
+          command: yarn test:cov
