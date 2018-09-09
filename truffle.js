@@ -25,11 +25,11 @@ module.exports = {
   networks: {
     geth: { ...DEFAULT, gas: 999999 },
     live: {
-      network_id: 1,
+      network_id: "*",
       host: "localhost",
       port: 8545,
-      gas: 4400000,
-      gasPrice: 21000000000
+      gas: 3500000,
+      gasPrice: 2100000000000
     },
     ropsten: {
       network_id: 3,
